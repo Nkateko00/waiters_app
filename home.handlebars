@@ -1,0 +1,38 @@
+<div class="container">
+    <form action="/waiters:/username" method="GET">
+
+        <div class="header">
+            <h1>Ophelia Roster</h1>
+            <div class="introduction">
+                <p1> Please Enter your name & Select Shift Days </p1>
+            </div>
+
+            <input type="text" name="user" id="inputElement" class="textArea" placeholder="enter your name here">
+
+            <div class="information">
+                <label><input type="checkbox" name="tick" value="mon"> Monday</label>
+                <label> <input type="checkboc" name="tick" value="tue"> Tuesday</label>
+                <label><input type="checkbox" name="tick" value="wed"> Wednesday</label>
+                <label><input type="checkbox" name="tick" value="wed"> Thursday</label>
+                <label><input type="checkbox" name="tick" value="wed"> Friday</label>
+
+                <button type="submit" name="submit">OK</button>
+            </div>
+            <div class="granted">
+                {{#if messages}}
+                {{messages.success}}
+                {{/if}}
+            </div>
+            <div class="denied">
+                {{#if messages}}
+                {{messages.error}}
+                {{/if}}
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+
+</div>
