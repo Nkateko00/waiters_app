@@ -8,9 +8,20 @@ module.exports = function (pool) {
 
             const verified = await pool.query(`select id from Waiters where waiters = $1`,[nameEntered])
 
-        }
+            if(verified.rowCount === 0){
 
+            await pool.query(`insert into Waiters waiters values ($1)`, [nameEntered]);
+            return 'Name Entered!'
+        }
+        return 'Name was already entered'
+        }
     }
+
+    async function allWaiters(){
+        const allWaiters = await pool.query(`select waiters from Waiters`);
+        return allWaiters.rows;
+    }
+
     async function clear(){
         const remove = await pool.query(`delete from Timesheet`);
         return remove.rows();
@@ -18,6 +29,8 @@ module.exports = function (pool) {
     }
     return {
         clear,
-        addName
+        addName,
+        allWaiters,
+        
     }
  }
