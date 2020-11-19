@@ -1,6 +1,6 @@
 module.exports = function waitersAvailabitiy(waiter) {
 
-      async function home(req, res) {
+    async function home(req, res) {
 
         var getName = await reg.addName()
         res.render('home', {
@@ -17,11 +17,19 @@ module.exports = function waitersAvailabitiy(waiter) {
 
         });
     }
+    async function reset(req, res) {
+        req.flash('success', 'Ophelia Waiters List has been reset');
+        await waiter.clear();
+        res.render('home', {
 
-    
+        });
+    }
+
+
     return {
 
         allWaiters,
-        home
+        home,
+        reset
     }
 }

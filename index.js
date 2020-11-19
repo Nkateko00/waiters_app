@@ -15,7 +15,7 @@ const pool = new Pool({
 });
 let app = express();
 const waiters = waitersJS(pool);
-const myRoutes = Routes(waiters);
+const myRoutes = routes(waiters);
 
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));

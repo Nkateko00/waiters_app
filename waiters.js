@@ -19,7 +19,6 @@ module.exports = function (pool) {
     async function addWeekdays(){
 
 
-        
     }
     async function
     async function getWeekdays() {
