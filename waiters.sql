@@ -15,10 +15,10 @@ create table Timesheet(
     waiters_name text not null,
 );
 
-insert into Weekdays (weekdsays) values ('Monday');
-insert into Weekdays (weekdsays) values ('Tuesday');
-insert into Weekdays (weekdsays) values ('Wednesday');
-insert into Weekdays (weekdsays) values ('Thursday');
-insert into Weekdays (weekdsays) values ('Friday');
-insert into Weekdays (weekdsays) values ('Saturday');
-insert into Weekdays (weekdsays) values ('Sunday');
+insert into Weekdays (weekdays) values ('Monday');
+insert into Weekdays (weekdays) values ('Tuesday');
+insert into Weekdays (weekdays) values ('Wednesday');
+insert into Weekdays (weekdays) values ('Thursday');
+insert into Weekdays (weekdays) values ('Friday');
+insert into Weekdays (weekdays) values ('Saturday');
+insert into Weekdays (weekdays) values ('Sunday');

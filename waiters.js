@@ -16,11 +16,15 @@ module.exports = function (pool) {
             return 'Name was already entered'
         }
     }
-    async function addWeekdays(){
+    async function addWeekdays(days,name){
+            await pool.query(`delete from Timesheet where waiters_name = $`,[name]);
+        for(var i =0;i<days.length;i++){
+            await pool.query(`insert into Timesheet where (weekdays_days,waiters_name) values ($1, $2)`,[days[i],])
 
+        }
 
     }
-    async function
+   
     async function getWeekdays() {
 
         const allWeekdays = await pool.query(`select weekdays from Weekdays`);
@@ -35,7 +39,7 @@ module.exports = function (pool) {
 
     async function clear() {
         const remove = await pool.query(`delete from Timesheet`);
-        return remove.rows();
+        return remove.rows;
 
     }
     return {

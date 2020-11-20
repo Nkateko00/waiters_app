@@ -9,17 +9,28 @@ module.exports = function waitersAvailabitiy(waiter) {
     }
 
     async function allWaiters(req, res) {
-        var allWaiters = await waiter.allWaiters();
+        var waiters = req.body('user');
+        
+      
 
         res.render('/waiters:/username', {
+            if(waiters === ""){
+                req.flash('please enter your name');
 
-            //   handlebars  : allWaiters;
+                 
+            else{
+
+                await waiter.allWaiters(waiters);
+            }
+        }
+    
+
 
         });
     }
     async function reset(req, res) {
-        req.flash('success', 'Ophelia Waiters List has been reset');
         await waiter.clear();
+        req.flash('success', 'Ophelia Waiters List has been reset');
         res.render('home', {
 
         });
