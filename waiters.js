@@ -29,6 +29,7 @@ module.exports = function (pool) {
             await pool.query(`delete from Timesheet where waiters_name = $`, [name]);
 
             for (var i = 0; i < days.length; i++) {
+                //console.log returns an array
 
                 await pool.query(`insert into Timesheet where (weekdays_days,waiters_id) values ($1, $2)`, [days[i], nameID])
             }
@@ -36,11 +37,10 @@ module.exports = function (pool) {
         }
         else {
             return false
+            //will prevent submit from running
         }
-    
+
 }
-
-
 
 async function getWeekdays() {
     //return all weekdays

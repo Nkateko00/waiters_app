@@ -4,7 +4,7 @@ module.exports = function waitersAvailabitiy(waiter) {
 
         var getName = await reg.addName()
         res.render('home', {
-            // handlebars : getName
+           
         });
     }
 
@@ -13,20 +13,17 @@ module.exports = function waitersAvailabitiy(waiter) {
         
       
 
-        res.render('/waiters:/username', {
-            if(waiters === ""){
-                req.flash('please enter your name');
+        res.render('/waiters:/username');
+        //     if(waiters === ""){
+        //         req.flash('please enter your name');
 
                  
-            else{
+        //     else{
 
-                await waiter.allWaiters(waiters);
-            }
-        }
+        //         await waiter.allWaiters(waiters);
+        //     }
+        // }
     
-
-
-        });
     }
     async function reset(req, res) {
         await waiter.clear();

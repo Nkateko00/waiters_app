@@ -9,7 +9,7 @@ const pool = new Pool({
     connectionString
 });
 
-const waiter = waiters(pool);
+var waiter = waiters(pool);
 
 describe('Waiters Function',function(){
 
@@ -62,3 +62,7 @@ it('should return all the Weekdays',async function(){
 })
 
 });
+after(function () {
+    pool.end();
+});
+
