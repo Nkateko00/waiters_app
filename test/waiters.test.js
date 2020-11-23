@@ -4,7 +4,7 @@ let waiters = require('../waiters')
 
 const pg = require("pg");
 const Pool = pg.Pool;
-const connectionString = process.env.DATABASE_URL || 'postgresql://teko:teko123@localhost:5432/*DATABASE_NAME*';
+const connectionString = process.env.DATABASE_URL || 'postgresql://teko:teko123@localhost:5432/waiters_shift';
 const pool = new Pool({
     connectionString
 });
