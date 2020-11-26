@@ -4,6 +4,7 @@ module.exports = function waitersAvailabitiy(waiter) {
 
         var getName = await reg.addName()
         res.render('home', {
+            
            
         });
     }

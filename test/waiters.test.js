@@ -49,13 +49,13 @@ it('should not add duplicate names onto the database',async function(){
 });
 it('should return all the Weekdays',async function(){
 
-    await waiter.addWeekdays('Monday');
-    await waiter.addWeekdays('Tuesday');
-    await waiter.addWeekdays('Wednesday');
-    await waiter.addWeekdays('Thursday');
-    await waiter.addWeekdays('Friday');
-    await waiter.addWeekdays('Saturday');
-    await waiter.addWeekdays('Sunday');
+    await waiter.('Monday');
+    await waiter.('Tuesday');
+    await waiter.('Wednesday');
+    await waiter.('Thursday');
+    await waiter.('Friday');
+    await waiter.('Saturday');
+    await waiter.('Sunday');
 
     assert.deepEqual([{ weekdays : 'Monday'},{weekdays : 'Tuesday'},,{weekdays : 'Wednesday'},,{weekdays : 'Thursday'}
     ,{weekdays : 'Friday'},{weekdays : 'Saturday'},{weekdays : 'Sunday'}],await waiter.getWeekdays());

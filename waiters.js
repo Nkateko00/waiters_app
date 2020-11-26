@@ -30,7 +30,6 @@ module.exports = function (pool) {
 
             for (var i = 0; i < days.length; i++) {
                 //console.log returns an array
-
                 await pool.query(`insert into Timesheet where (weekdays_days,waiters_id) values ($1, $2)`, [days[i], nameID])
             }
 
@@ -39,6 +38,13 @@ module.exports = function (pool) {
             return false
             //will prevent submit from running
         }
+
+}
+async function getTimesheets(days,names){
+
+    const allName = await addName(names);
+    
+
 
 }
 
@@ -50,7 +56,7 @@ async function getWeekdays() {
 
 }
 
-async function allWaiters() {
+async function getWaiters() {
     // return all the waiters
     const allWaiters = await pool.query(`select waiters from Waiters`);
     return allWaiters.rows;
@@ -65,9 +71,10 @@ async function clear() {
 return {
     clear,
     addName,
-    allWaiters,
+    getWaiters,
     getWeekdays,
-    getWorkingDays
+    getWorkingDays,
+    getTimesheets
 
 }
 }

@@ -1,20 +1,19 @@
 <div class="container">
     <form action="/waiters:/username" method="GET">
-
         <div class="header">
             <h1>Ophelia Roster</h1>
         </div>
         <div class="introduction">
-            <p1> Please Enter your name & Select Shift Days </p1>
+            <p1> Please Enter your name in the URL & Select Shift Days </p1>
         </div>
         <p></p>
         <div class="information">
 
 
-           <input type="text" name="user" id="inputElement" class="textArea" placeholder="enter your name here">
+            <input type="text" name="user" id="inputElement" class="textArea" placeholder="enter your name here">
 
 
-        <button type="submit" name="submit">OK</button>
+            <button type="submit" name="submit">OK</button>
         </div>
         <div class="granted">
             {{#if messages}}
@@ -25,7 +24,19 @@
             {{#if messages}}
             {{messages.error}}
             {{/if}}
-            </div>
+        </div>
     </form>
 </div>
-    {{!--  --}}
+{{!--  --}}
+<div class="container">
+    <form action="/waiters" method="get">
+        <h1>Waiters</h1>
+        {{#each waiter}}
+        <a href="/waiters/{{this.waiters}}">
+            <p>{{waiters}}</p>
+        </a>
+        {{/each}}
+    </form>
+    <br>
+    <button type="button"><a href="/">back</a></button>
+</div>
